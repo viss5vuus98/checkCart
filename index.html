@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+  
+  <!-- main -->
+  <section class="main">
+    <div class="row">
+      <div id="step-control" class="stepper-panel">
+        <h3>結帳</h3>
+        <div class="stepper-container">
+          <div class="step active">
+            <div class="circle-container first-step"></div>
+            <div class="label-container">寄送地址</div>
+            <span class="connect-line"></span>
+          </div>
+          <div class="step second-step">
+            <div class="circle-container"></div>
+            <div class="label-container">運送方式</div>
+            <span class="connect-line"></span>
+          </div>
+          <div class="step thired-step">
+            <div class="circle-container"></div>
+            <div class="label-container">付款資訊</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-panel">
+        <div class="form-container">
+          <!-- page 1 -->
+          <form action="post" class="first-form form">
+            <div class="form-content">
+              <h4>寄送地址</h4>
+              <div class="form-row first-row">
+                <div class="form-item gender">
+                  <label for="">稱謂</label>
+                  <select name="gender" id="gender">
+                    <option value="">先生</option>
+                    <option value="">女士</option>
+                  </select>
+                </div>
+                <div class="form-item name">
+                  <label for="">姓名</label>
+                  <input type="text"  value="請輸入姓名">
+                </div>
+              </div>
+              <div class="form-row form-item second-row">
+                <label for="">電話</label>
+                <input type="text" value="請輸入行動電話">
+              </div>
+              <div class="form-row form-item third-row">
+                <label for="" >Email</label>
+                <input type="text"  value="請輸入電子郵件">
+              </div>
+              <div class="form-row form-item fourth-row">
+                <label for="">縣市</label>
+                  <select name="" id="">
+                    <option value="" disabled selected>請選擇縣市</option>
+                    <option value="">台南</option>
+                    <option value="">高雄</option>
+                    <option value="">屏東</option>
+                  </select>
+              </div>
+              <div class="form-row form-item fifth-reow">
+                <label for="">地址</label>
+                <input type="text"  value="請輸入地址">
+              </div>
+            </div>
+          </form>
+          <!-- page 2 -->
+          <form action="post" class="second-form form d-none">
+            <div class="form-content">
+              <h4>運送方式</h4>
+              <div class="radio-wrapper">
+                <input type="radio" name="shipFee" checked>
+                <div class="deliver">
+                  <p class="radio-title">標準運送</p>
+                  <p class="radio-date">約3~7個工作天</p>
+                </div>
+                <p class="radio-price">免費</p>
+              </div>
+              <div class="radio-wrapper" >
+                <input type="radio" name="shipFee">
+                <div class="deliver">
+                  <p class="radio-title">DHL貨運</p>
+                  <p class="radio-date">48小時內送達</p>
+                </div>
+                <p class="radio-price">$500</p>
+              </div>
+            </div>
+          </form>
+          <!-- page 3 -->
+          <form action="post" class="third-form form d-none">
+            <h4>付款資訊</h4>
+            <div class="form-content">
+              <div class="form-row">
+                <label for="">持卡人姓名</label>
+                <input type="text" value="請輸入持卡人姓名">
+              </div>
+              <div class="form-row">
+                <label for="">卡號</label>
+                <input type="number" value="1234567890" maxlength="16">
+              </div>
+              <div class="form-row last">
+                <div class="form-item">
+                  <label for="">有效期限</label>
+                  <input type="text" value="MM/YY">
+                </div>
+                <div class="form-item">
+                  <label for="">CVC/CCV</label>
+                  <input type="text" value="123" maxlength="3">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="cart-panel">
+        <h4 class="cart-title">購物籃</h4>
+        <div class="cart-list-wrapper">
+          <div class="cart-item">
+            <div class="product-image"><img src="./image/Block@2x.png" alt=""></div>
+            <div class="cart-item-control">
+              <p class="cart-title">破壞補丁修身牛仔褲</p>
+              <div class="cart-btn" data-pid="1">
+                <button class="reduce" id="reduce">-</button>
+                <span>1</span>
+                <button class="add" id="add">+</button>
+              </div>
+              <p class="cart-price">$3,999</p>
+            </div>
+          </div>
+          <div class="cart-item">
+            <div class="product-image"><img src="./image/Block@2x-2.png" alt=""></div>
+            <div class="cart-item-control">
+              <p class="cart-title">刷色直筒牛仔褲</p>
+              <div class="cart-btn" data-pid="2">
+                <button class="reduce" id="reduce">-</button>
+                <span>1</span>
+                <button class="add" id="add">+</button>
+              </div>
+              <p class="cart-price">$1,299</p>
+            </div>
+          </div>
+        </div>
+        <div class="cart-footer">
+          <div class="delivery-charge">
+            <p>運費</p>
+            <p class="point">免費</p>
+          </div>
+          <div class="total">
+            <p>小計</p>
+            <p class="point total-penal">$5,298</p>
+          </div>
+        </div>
+      </div>
+      <div class="btn-section">
+        <button class="back-step d-none" id="back-step">上一步
+          <img src="./image/icon/leftback.png" alt="">
+        </button>
+        <button class="next-step" id="next-step">下一步
+          <img src="./image/icon/arrownext.png" alt="">
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- #main -->
+  <section class="footer">
+
+  </section>
+  <script src="./src/app.js"></script>
+</body>
+
+</html>
